@@ -1,0 +1,198 @@
+@import 'variable'
+
+* 
+  padding: 0
+  margin: 0
+  color: $red-brown
+  font-family: $font-primary
+
+p
+    font-size: 12px
+    +font-primary-regular
+
+body 
+    display: grid
+    min-height: 100vh
+    grid-template-columns: 1fr
+    grid-template-rows: auto auto 1fr auto
+    grid-gap: 0
+    grid-template-areas: "nav" "header" "section" "footer"
+    width: 100%
+    
+nav
+    grid-area: nav
+//     background: lighten($pale-80, 4%)
+//     display: flex
+//     justify-content: center
+//     text-align: center
+//     flex-wrap: wrap
+
+header
+    grid-area: header
+//     display: flex
+//     justify-content: space-between
+    
+//     div
+//         margin: 0 20px
+
+section
+    grid-area: section
+    background: $white
+        
+
+.container
+    width: calc(100% - 30px)
+    max-width: 1000px
+    margin: auto
+    padding: 1rem 0 2rem 0
+
+section > .content
+    &:nth-child(even)
+        background: $light-cream
+    
+.bg-white 
+    background: $white
+
+// footer
+//     grid-area: footer
+
+// // a 
+// //     text-decoration: none
+// //     cursor: pointer
+
+// .social-media-container 
+//     +font-primary-regular
+//     line-height: 40px
+//     margin: 0 10px
+//     cursor: pointer
+//     text-decoration: none
+    
+//     span
+//         font-size: 12px
+//         color: $terra-cotta
+//         display: none //block when web version
+
+//     img
+//         width: 25px
+//         height: 25px
+//         line-height: 40px
+//         vertical-align: middle
+
+// .logo-container
+//     img 
+//         height: 60px
+
+// .header-link 
+//     line-height: 60px
+//     vertical-align: middle
+//     display: flex
+    
+//     a
+//         color: $terra-cotta
+//         text-transform: uppercase
+//         margin: 0 10px
+
+// .mobile-menu 
+//     position: absolute
+//     flex-direction: column
+//     padding: 1.5rem 2rem
+//     line-height: 2em
+//     bottom: 3rem
+//     right: 25px
+//     text-align: center
+//     background: $terra-cotta
+//     border-radius: 5px 5px 0 5px 
+//     //display: flex
+//     display: none
+    
+//     a
+//         color: $white
+
+// .web-menu
+//     display: none
+
+// .mobile-menu-toggle 
+//     border: none
+//     outline: none
+//     background: $terra-cotta
+//     position: fixed
+//     bottom: 2.5rem
+//     right: 20px
+//     width: 50px
+//     height: 50px
+//     border-radius: 50%
+//     color: $white
+//     //border: 1px solid $white
+//     cursor: pointer
+//     // box-shadow: 0px 10px 20px 2px $soft-grey
+//     z-index: 100
+
+.font--uppercase 
+    text-transform: uppercase
+
+.grid 
+    display: grid
+    
+.grid-left-right
+    grid-template-columns: 1fr 1fr
+    grid-template-rows: auto
+    grid-template-areas: "left left" "right right" 
+    grid-gap: .5em
+    text-align: center
+
+    .grid__left
+        grid-area: left
+
+    .grid__right
+        grid-area: right
+
+.grid__reverse
+    grid-template-areas: "right right" "left left"
+
+.btn
+    outline: none
+    background: none
+    font-size: 12px
+    border: 0
+
+.btn--primary 
+    border: 2px solid $dusty-orange
+    padding: .5em 2em
+    color: $dusty-orange
+    border-radius: 30px
+
+    &:hover 
+        background: $dusty-orange
+        color: $white
+        cursor: pointer
+        +font-primary-bold
+
+@mixin mx($value)
+    margin-top: calc(10px * #{$value})
+    margin-bottom: calc(10px * #{$value})
+
+.mx-2
+    @include mx(2) 
+.mx-3
+    @include mx(3) 
+.mx-4
+    @include mx(4) 
+.mx-5
+    @include mx(5) 
+        
+h2 + p 
+    margin-top: 10px
+
+.text-align--center
+    text-align: center
+
+.font--small
+    color: $warm-grey
+    font-size: 0.8em
+
+@import '../../resources/js/components/Nav/Nav'
+@import '../../resources/js/components/Header/Header'
+@import '../../resources/js/components/Footer/Footer'
+@import '../../resources/js/components/ProductCard/ProductCard'
+
+@import 'home'

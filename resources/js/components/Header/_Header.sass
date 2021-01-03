@@ -1,0 +1,101 @@
+header
+    display: flex
+    justify-content: space-between
+    
+    div
+        margin: 0 20px
+
+
+.social-media-container 
+    +font-primary-regular
+    line-height: 40px
+    margin: 0 10px
+    cursor: pointer
+    text-decoration: none
+    
+    span
+        font-size: 12px
+        color: $terra-cotta
+        display: none //block when web version
+
+    img
+        width: 25px
+        height: 25px
+        line-height: 40px
+        vertical-align: middle
+
+.logo-container
+    img 
+        height: 60px
+
+.header-link 
+    line-height: 60px
+    vertical-align: middle
+    display: flex
+    
+    a
+        color: $terra-cotta
+        text-transform: uppercase
+        margin: 0 10px
+
+@keyframes zoom-in
+    0%
+        transform: translateX(150%)
+        
+    100%
+        transform: translateX(0%)
+
+@keyframes zoom-out
+    0%
+        transform: translateX(0%)
+        
+    100%
+        transform: translateX(100%)
+        
+.mobile-menu 
+    position: fixed
+    flex-direction: column
+    padding: 1.5rem 2rem
+    line-height: 2em
+    bottom: 3rem
+    right: 25px
+    text-align: center
+    background: $terra-cotta
+    border-radius: 5px 5px 0 5px 
+    z-index: 100
+    //display: flex
+    display: none
+    
+    a
+        color: $white
+
+.mobile-menu-active
+    display: flex
+    animation: zoom-in .5s
+
+.mobile-menu-inactive
+    right: -500px
+    display: flex
+    overflow: hidden
+    animation: zoom-out 2s
+
+
+.web-menu
+    display: flex
+    //display: none
+
+.mobile-menu-toggle 
+    border: none
+    outline: none
+    background: $terra-cotta
+    position: fixed
+    bottom: 2.5rem
+    right: 20px
+    width: 50px
+    height: 50px
+    border-radius: 50%
+    color: $white
+    //border: 1px solid $white
+    cursor: pointer
+    // box-shadow: 0px 10px 20px 2px $soft-grey
+    z-index: 100
